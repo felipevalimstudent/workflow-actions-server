@@ -1,0 +1,13 @@
+name: 'Checkout and Install nmon'
+description: 'Checks out code and installs nmon package'
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install nmon
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y nmon
+      shell: bash
